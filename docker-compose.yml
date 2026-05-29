@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: udacity-agentic-ai-multi-agent-orchestrator:dev
+    container_name: udacity-agentic-ai-multi-agent-orchestrator
+    working_dir: /app
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    command: ["tail", "-f", "/dev/null"]
